@@ -1,0 +1,29 @@
+{
+  "name": "koa_blog",
+  "version": "1.0.0",
+  "description": "a blog demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zscumt123/koa_blog.git"
+  },
+  "keywords": [
+    "blog",
+    "koa"
+  ],
+  "author": "zs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zscumt123/koa_blog/issues"
+  },
+  "homepage": "https://github.com/zscumt123/koa_blog#readme",
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0"
+  }
+}
