@@ -8,9 +8,9 @@
 const Koa = require('koa');
 
 
-const router = require('./routers');
-const config = require('./config');
-
+const router = require('./routers/index');
+const config = require('./config/index');
+require('./models');
 const app = new Koa();
 
 app.use(router.routes());
