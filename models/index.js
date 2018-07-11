@@ -6,6 +6,12 @@
  */
 
 const mongoose = require('mongoose');
+
+const categoryModal = require('./categoryModel');
+
+
+
+
 mongoose.Promise = Promise;
 mongoose.connect('mongodb://118.24.75.177/blog', (err) => {
     if(err) {
@@ -14,3 +20,5 @@ mongoose.connect('mongodb://118.24.75.177/blog', (err) => {
     }
     console.log('db connect success');
 });
+
+exports.categoryModal = categoryModal;
