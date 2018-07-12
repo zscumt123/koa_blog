@@ -13,7 +13,7 @@ const categoryModal = require('./categoryModel');
 
 
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://118.24.75.177/blog', (err) => {
+mongoose.connect('mongodb://118.24.75.177:27017/blog', { useNewUrlParser: true  }, (err) => {
     if(err) {
         console.log(err);
         process.exit(1);
