@@ -4,6 +4,7 @@
  * @date 2018/7/10
  *
  */
+const logger = require('../log');
 //错误处理中间件
 async function onerror(ctx, next) {
     try {
@@ -13,8 +14,7 @@ async function onerror(ctx, next) {
         let status = err.status || 500;
         let message = err.message || '服务器错误';
         //处理手动抛出400错误
-        if(status === 400) {
-            console.log(err)
+        if(status === 400 && err['throw']) {
             ctx.body = {
                 code: 400,
                 message
@@ -29,9 +29,11 @@ async function onerror(ctx, next) {
             };
             return;
         }
+        //其他的错误统一返回500记录日志
         //todo 记录错误日志????????
+        logger.error(err);
         ctx.body = {
-            code:status,
+            code:500,
             message: '服务器错误'
         };
     }

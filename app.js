@@ -7,13 +7,18 @@
 
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
+const koaLog4js = require('koa-log4');
+
 
 const router = require('./routers/index');
 const config = require('./config/index');
+const logger = require('./log');
 const { onerror } = require('./middlewares');
 require('./models');
 
+
 const app = new Koa();
+app.use(koaLog4js.koaLogger(logger));
 app.use(onerror);
 app.use(bodyParser());
 

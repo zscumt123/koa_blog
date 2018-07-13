@@ -8,17 +8,21 @@
 const mongoose = require('mongoose');
 
 const categoryModal = require('./categoryModel');
-
+const  config = require('../config');
+const logger = require('../log');
 
 
 
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://118.24.75.177:27017/blog', { useNewUrlParser: true  }, (err) => {
+mongoose.connect(config.db, {
+    useNewUrlParser: true,
+    authSource: 'admin'  //账号密码登录需要admin数据库授权
+}, (err) => {
     if(err) {
         console.log(err);
         process.exit(1);
     }
-    console.log('db connect success');
+    logger.info('db connect success!');
 });
 
 exports.categoryModal = categoryModal;

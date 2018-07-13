@@ -24,6 +24,7 @@
   "dependencies": {
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
+    "koa-log4": "^2.3.0",
     "koa-router": "^7.4.0",
     "mongoose": "^5.2.2"
   },
