@@ -8,6 +8,7 @@
 const mongoose = require('mongoose');
 
 const categoryModal = require('./categoryModel');
+const userModel = require('./userModel');
 const  config = require('../config');
 const logger = require('../log');
 
@@ -26,3 +27,5 @@ mongoose.connect(config.db, {
 });
 
 exports.categoryModal = categoryModal;
+exports.userModel = userModel;
+

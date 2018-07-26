@@ -8,7 +8,8 @@
 const path = require('path');
 
 module.exports = {
-    port: 3000,
+    port: 3004,
     db: 'mongodb://root:root@118.24.75.177:27017/blog',
-    logDir: path.join(__dirname, '../log/data')
+    logDir: path.join(__dirname, '../log/data'),
+    secret: 'koa_blog'
 };

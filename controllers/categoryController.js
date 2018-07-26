@@ -8,7 +8,6 @@ const { categoryModal } = require('../models');
 const { successResponse, tipResponse } = require('../utils');
 //添加分类
 const addCategory = async (ctx, next) => {
-    console.log(ctx.request.body);
     const { name = '' } = ctx.request.body;
     //参数校验
     if(!name) {

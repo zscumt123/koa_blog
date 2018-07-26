@@ -22,8 +22,10 @@
   },
   "homepage": "https://github.com/zscumt123/koa_blog#readme",
   "dependencies": {
+    "jsonwebtoken": "^8.3.0",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
+    "koa-jwt": "^3.3.2",
     "koa-log4": "^2.3.0",
     "koa-router": "^7.4.0",
     "mongoose": "^5.2.2"

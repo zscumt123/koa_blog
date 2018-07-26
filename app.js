@@ -8,7 +8,7 @@
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const koaLog4js = require('koa-log4');
-
+const jwt = require('koa-jwt');
 
 const router = require('./routers/index');
 const config = require('./config/index');
@@ -18,10 +18,13 @@ require('./models');
 
 
 const app = new Koa();
-app.use(koaLog4js.koaLogger(logger));
 app.use(onerror);
+app.use(koaLog4js.koaLogger(logger));
+app.use(jwt({ secret: config.secret }).unless({
+    path: [/\/login/, /\/register/]
+}));
 app.use(bodyParser());
-
 app.use(router.routes());
+
 
 app.listen(config.port);

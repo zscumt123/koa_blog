@@ -6,15 +6,16 @@
  */
 
 const Router = require('koa-router');
-const { userLogin } = require('../controllers/userController');
+const { userLogin, register } = require('../controllers/userController');
 const { addCategory } = require('../controllers/categoryController');
 
 const router = new Router({
     prefix: '/api/v1'     //api 前缀
 });
 
-router.get('/login', userLogin);
+router.post('/login', userLogin);
 
 router.post('/category', addCategory);
+router.post('/register', register);
 
 module.exports = router;
